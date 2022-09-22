@@ -254,6 +254,14 @@ elem_mask(const uint8_t* v0, const int index)
     return (v0[idx] >> pos) & 1;
 }
 
+template<typename T>
+inline int
+vs_mask(T* vs, int index){
+    int idx = index / (sizeof(T)*8);
+    int pos = index % (sizeof(T)*8);
+    return (vs[idx] >> pos) & 1;
+}
+
 inline uint64_t
 mulhu(uint64_t a, uint64_t b)
 {
