@@ -1,0 +1,91 @@
+/home/yangfan/plct-gem5/build/RISCV/gem5.opt  --debug-flags=ExecAll /home/yangfan/plct-gem5//configs/example/se.py \
+--cmd="./rv64uv-ps-vwredsumu.vs_LMUL1SEW16" --cpu-type=O3CPU --caches
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version [DEVELOP-FOR-22.1]
+gem5 compiled Sep 27 2022 11:13:14
+gem5 started Sep 29 2022 21:51:20
+gem5 executing on p9-plct, pid 20811
+command line: /home/yangfan/plct-gem5/build/RISCV/gem5.opt --debug-flags=ExecAll /home/yangfan/plct-gem5//configs/example/se.py --cmd=./rv64uv-ps-vwredsumu.vs_LMUL1SEW16 --cpu-type=O3CPU --caches
+
+**** REAL SIMULATION ****
+  78500: system.cpu: A0 T0 : 0x80000000 @_start    : auipc t0, 0                : IntAlu :  D=0x0000000080000000  FetchSeq=1  CPSeq=1  flags=(IsInteger)
+  78500: system.cpu: A0 T0 : 0x80000004 @_start+4    : addi t0, t0, 12            : IntAlu :  D=0x000000008000000c  FetchSeq=2  CPSeq=2  flags=(IsInteger)
+  78500: system.cpu: A0 T0 : 0x80000008 @_start+8    : jalr zero, 0(t0)           : IntAlu :  D=0x000000008000000c  FetchSeq=3  CPSeq=3  flags=(IsInteger|IsControl|IsIndirectControl|IsUncondControl|IsReturn)
+  83500: system.cpu: A0 T0 : 0x8000000c @_start+12    : addi t0, zero, -1          : IntAlu :  D=0xffffffffffffffff  FetchSeq=12  CPSeq=4  flags=(IsInteger)
+  83500: system.cpu: A0 T0 : 0x80000010 @_start+16    : vsetvli t1, t0, e16, m1, ta, ma : VectorDummy :  D=0x0000000000000010  FetchSeq=13  CPSeq=5  flags=(IsInteger)
+  87000: system.cpu: A0 T0 : 0x80000014 @_start+20    : auipc a2, 3                : IntAlu :  D=0x0000000080003014  FetchSeq=14  CPSeq=6  flags=(IsInteger)
+  87000: system.cpu: A0 T0 : 0x80000018 @_start+24    : addi a2, a2, 124           : IntAlu :  D=0x0000000080003090  FetchSeq=15  CPSeq=7  flags=(IsInteger)
+  87000: system.cpu: A0 T0 : 0x8000001c @_start+28    : vle16_v v4, (a2)          
+  87000: system.cpu: A0 T0 : 0x8000001c @_start+28. 0 : vle16_v_micro v4, 0(a2), v4 : VectorDummy :  D=[f8ff0300_01000000_00000700_01000000_ffffffef_ffefffff_00000100_00000100] A=0x80003090  FetchSeq=16  CPSeq=8  flags=(IsVector|IsLoad|IsMicroop|IsDelayedCommit|IsLastMicroop|IsFirstMicroop)
+  87000: system.cpu: A0 T0 : 0x80000020 @_start+32    : vsetvli t1, t0, e16, m2, ta, ma : VectorDummy :  D=0x0000000000000020  FetchSeq=17  CPSeq=9  flags=(IsInteger)
+  90000: system.cpu: A0 T0 : 0x80000024 @_start+36    : vle16_v v2, (a2)          
+  90000: system.cpu: A0 T0 : 0x80000024 @_start+36. 0 : vle16_v_micro v2, 0(a2), v2 : VectorDummy :  D=[f8ff0300_01000000_00000700_01000000_ffffffef_ffefffff_00000100_00000100] A=0x80003090  FetchSeq=18  CPSeq=10  flags=(IsVector|IsLoad|IsMicroop|IsDelayedCommit|IsFirstMicroop)
+  90000: system.cpu: A0 T0 : 0x80000024 @_start+36. 1 : vle16_v_micro v3, 32(a2), v3 : VectorDummy :  D=[f8ff0300_01000000_00000700_01000000_ffffffef_ffefffff_00000100_00000100] A=0x800030b0  FetchSeq=19  CPSeq=11  flags=(IsVector|IsLoad|IsMicroop|IsDelayedCommit|IsLastMicroop)
+  90000: system.cpu: A0 T0 : 0x80000028 @_start+40    : auipc a2, 3                : IntAlu :  D=0x0000000080003028  FetchSeq=20  CPSeq=12  flags=(IsInteger)
+  90000: system.cpu: A0 T0 : 0x8000002c @_start+44    : addi a2, a2, 112           : IntAlu :  D=0x0000000080003098  FetchSeq=21  CPSeq=13  flags=(IsInteger)
+  90000: system.cpu: A0 T0 : 0x80000030 @_start+48    : vsetvli t1, t0, e16, m1, ta, ma : VectorDummy :  D=0x0000000000000010  FetchSeq=22  CPSeq=14  flags=(IsInteger)
+  93000: system.cpu: A0 T0 : 0x80000034 @_start+52    : vle16_v v6, (a2)          
+  93000: system.cpu: A0 T0 : 0x80000034 @_start+52. 0 : vle16_v_micro v6, 0(a2), v6 : VectorDummy :  D=[00000700_01000000_ffffffef_ffefffff_00000100_00000100_f8ff0300_01000000] A=0x80003098  FetchSeq=23  CPSeq=15  flags=(IsVector|IsLoad|IsMicroop|IsDelayedCommit|IsLastMicroop|IsFirstMicroop)
+  93000: system.cpu: A0 T0 : 0x80000038 @_start+56    : addi t0, zero, 8           : IntAlu :  D=0x0000000000000008  FetchSeq=24  CPSeq=16  flags=(IsInteger)
+  93000: system.cpu: A0 T0 : 0x8000003c @_start+60    : vsetvli t1, t0, e16, m1, ta, ma : VectorDummy :  D=0x0000000000000008  FetchSeq=25  CPSeq=17  flags=(IsInteger)
+this->vl: 8
+micro_vlmax: 8
+-----------------
+Vd[0]: 0
+this->microVl8
+mask true
+Vs2[i]: 3fff8
+sum: 3fff8
+mask true
+Vs2[i]: 1
+sum: 3fff9
+mask true
+Vs2[i]: 70000
+sum: afff9
+mask true
+Vs2[i]: 1
+sum: afffa
+mask true
+Vs2[i]: efffffff
+sum: f00afff9
+mask true
+Vs2[i]: ffffefff
+sum: f00aeff8
+mask true
+Vs2[i]: 10000
+sum: f00beff8
+mask true
+Vs2[i]: 10000
+sum: f00ceff8
+final output:f00ceff8
+-----------------
+Vd[0]: f00ceff8
+this->microVl0
+final output:f00ceff8
+ 165000: system.cpu: A0 T0 : 0x80000040 @_start+64    : vwredsumu_vs v2, v4, v6   
+ 165000: system.cpu: A0 T0 : 0x80000040 @_start+64. 0 : vwredsumu_vs_micro v2, v4, v6 : VectorDummy :  D=[f8ef0cf0_01000000_00000700_01000000_ffffffef_ffefffff_00000100_00000100]  FetchSeq=26  CPSeq=18  flags=(IsVector|IsMicroop|IsDelayedCommit|IsFirstMicroop)
+ 165000: system.cpu: A0 T0 : 0x80000040 @_start+64. 1 : vwredsumu_vs_micro v2, v5, v6 : VectorDummy :  D=[f8ef0cf0_01000000_00000700_01000000_ffffffef_ffefffff_00000100_00000100]  FetchSeq=27  CPSeq=19  flags=(IsVector|IsMicroop|IsDelayedCommit|IsLastMicroop)
+ 165000: system.cpu: A0 T0 : 0x80000044 @_start+68    : addi t0, zero, -1          : IntAlu :  D=0xffffffffffffffff  FetchSeq=28  CPSeq=20  flags=(IsInteger)
+ 165000: system.cpu: A0 T0 : 0x80000048 @_start+72    : vsetvli t1, t0, e16, m2, ta, ma : VectorDummy :  D=0x0000000000000020  FetchSeq=29  CPSeq=21  flags=(IsInteger)
+ 168500: system.cpu: A0 T0 : 0x8000004c @_start+76    : auipc a1, 3                : IntAlu :  D=0x000000008000304c  FetchSeq=30  CPSeq=22  flags=(IsInteger)
+ 168500: system.cpu: A0 T0 : 0x80000050 @_start+80    : addi a1, a1, -76           : IntAlu :  D=0x0000000080003000  FetchSeq=31  CPSeq=23  flags=(IsInteger)
+ 168500: system.cpu: A0 T0 : 0x80000054 @_start+84    : vse16_v v2, (a1)          
+ 168500: system.cpu: A0 T0 : 0x80000054 @_start+84. 0 : vse16_v_micro v2, 0(a1)    : VectorDummy :  A=0x80003000  FetchSeq=32  CPSeq=24  flags=(IsVector|IsStore|IsMicroop|IsDelayedCommit|IsFirstMicroop)
+ 168500: system.cpu: A0 T0 : 0x80000054 @_start+84. 1 : vse16_v_micro v3, 32(a1)   : VectorDummy :  A=0x80003020  FetchSeq=33  CPSeq=25  flags=(IsVector|IsStore|IsMicroop|IsDelayedCommit|IsLastMicroop)
+ 168500: system.cpu: A0 T0 : 0x80000058 @test_2    : addi gp, zero, 2           : IntAlu :  D=0x0000000000000002  FetchSeq=34  CPSeq=26  flags=(IsInteger)
+ 168500: system.cpu: A0 T0 : 0x8000005c @test_2+4    : ld t0, 0(a1)               : MemRead :  D=0x00000001f00ceff8 A=0x80003000  FetchSeq=35  CPSeq=27  flags=(IsInteger|IsLoad)
+ 168500: system.cpu: A0 T0 : 0x80000060 @test_2+8    : addi a1, a1, 8             : IntAlu :  D=0x0000000080003008  FetchSeq=36  CPSeq=28  flags=(IsInteger)
+ 168500: system.cpu: A0 T0 : 0x80000064 @test_2+12    : lui t2, 2                  : IntAlu :  D=0x0000000000002000  FetchSeq=37  CPSeq=29  flags=(IsInteger)
+ 169000: system.cpu: A0 T0 : 0x80000068 @test_2+16    : addiw t2, t2, 1            : IntAlu :  D=0x0000000000002001  FetchSeq=38  CPSeq=30  flags=(IsInteger)
+ 169000: system.cpu: A0 T0 : 0x8000006c @test_2+20    : slli t2, t2, 19            : IntAlu :  D=0x0000000100080000  FetchSeq=39  CPSeq=31  flags=(IsInteger)
+ 169000: system.cpu: A0 T0 : 0x80000070 @test_2+24    : addi t2, t2, 4             : IntAlu :  D=0x0000000100080004  FetchSeq=40  CPSeq=32  flags=(IsInteger)
+ 169000: system.cpu: A0 T0 : 0x80000074 @test_2+28    : bne t0, t2, 3908           : IntAlu :   FetchSeq=41  CPSeq=33  flags=(IsInteger|IsControl|IsDirectControl|IsCondControl)
+ 226000: system.cpu: A0 T0 : 0x80000fb8 @fail    : fence iorw, iorw           : No_OpClass :   FetchSeq=44  CPSeq=34  flags=(IsWriteBarrier|IsReadBarrier)
+ 226000: system.cpu: A0 T0 : 0x80000fbc @fail+4    : addi a0, gp, 0             : IntAlu :  D=0x0000000000000002  FetchSeq=45  CPSeq=35  flags=(IsInteger)
+ 277000: system.cpu: A0 T0 : 0x80000fc0 @fail+8    : addi a7, zero, 93          : IntAlu :  D=0x000000000000005d  FetchSeq=46  CPSeq=36  flags=(IsInteger)
+ 277000: system.cpu: A0 T0 : 0x80000fc4 @fail+12    : ecall                      : No_OpClass :   FetchSeq=47  CPSeq=36  flags=(IsSerializeAfter|IsNonSpeculative|IsSyscall)
+Exiting @ tick 283500 because exiting with last active thread context
+Simulated exit code not 0! Exit code is 2
